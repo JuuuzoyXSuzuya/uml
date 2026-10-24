@@ -39,7 +39,7 @@ class MainActivity : Activity() {
         }
         val content = LinearLayout(this).apply {
             orientation = LinearLayout.VERTICAL
-            setPadding(20, 12, 20, 20)
+            setPadding(20, 32, 20, 20)
             addView(title)
             addView(importButton)
             addView(sampleButton)
