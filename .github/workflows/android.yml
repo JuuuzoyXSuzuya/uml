@@ -32,10 +32,12 @@ jobs:
           gradle-version: "8.9"
 
       - name: Accept Android SDK licenses
-        run: yes | "$ANDROID_HOME/cmdline-tools/16.0/bin/sdkmanager" --licenses || true
+        run: |
+          yes | "$ANDROID_HOME/cmdline-tools/16.0/bin/sdkmanager" --licenses || true
 
       - name: Install Android SDK packages
-        run: "$ANDROID_HOME/cmdline-tools/16.0/bin/sdkmanager" --verbose --install "platforms;android-35" "build-tools;35.0.0" "platform-tools"
+        run: |
+          "$ANDROID_HOME/cmdline-tools/16.0/bin/sdkmanager" --verbose --install "platforms;android-35" "build-tools;35.0.0" "platform-tools"
 
       - name: Build debug APK
         run: gradle assembleDebug
