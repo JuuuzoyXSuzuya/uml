@@ -25,12 +25,16 @@ uses: actions/checkout@v4
 
   - name: Set up Android SDK
     uses: android-actions/setup-android@v3
-    with:
-      cmdline-tools-version: '13114758'
+
+  - name: Diagnose Android SDK
+    run: |
+      echo "ANDROID_HOME=$ANDROID_HOME"
+      java -version
+      sdkmanager --version
 
   - name: Install Android SDK packages
     run: |
-      sdkmanager --version
+      yes | sdkmanager --licenses
       sdkmanager --install "platforms;android-35" "build-tools;35.0.0" "platform-tools"
 
   - name: Build debug APK
