@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "id": "example.gameplay",
+  "name": "Example Gameplay Mod",
+  "version": "1.0.0",
+  "runtime": "managed",
+  "entrypoint": "ExampleMod",
+  "apiVersion": "1.0",
+  "targets": {
+    "games": ["example.game"],
+    "abis": ["arm64-v8a"]
+  },
+  "dependencies": []
+}
